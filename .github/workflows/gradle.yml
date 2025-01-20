@@ -16,9 +16,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 17
@@ -31,6 +28,9 @@ jobs:
       uses: android-actions/setup-android@v3
 
 
+    - name: Set execute permissions on gradlew
+      run: chmod +x ./gradlew 
+      
     # Configure Gradle for optimal use in GitHub Actions, including caching of downloaded dependencies.
     # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
     - name: Setup Gradle
