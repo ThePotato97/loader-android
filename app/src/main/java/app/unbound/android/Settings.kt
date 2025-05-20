@@ -79,5 +79,9 @@ class Settings {
         } catch (e: Exception) {
             JSONObject("{}")
         }
+        if (!settings.has("unbound") || settings.opt("unbound") !is JSONObject) {
+    settings.put("unbound", JSONObject())
+    save()
+        }
     }
 }
