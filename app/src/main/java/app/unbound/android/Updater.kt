@@ -53,7 +53,7 @@ class Updater {
         }
 
         fun getDownloadURL(): URL {
-            val url = Unbound.settings.get("unbound", "loader.update.url", "https://raw.githubusercontent.com/unbound-mod/builds/refs/heads/main/unbound.js") as String
+            val url = Unbound.settings.get("unbound", "loader.update.url", "https://raw.githubusercontent.com/unbound-app/builds/refs/heads/main/unbound.js") as String
 
             return URL(url)
         }
